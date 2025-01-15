@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and removing of elements</title>
+</head>
+<body>
+    <ul class="languages">
+        <li>javascript</li>
+    </ul>
+    <script>
+        addLanguage('Ruby')
+        addLanguage('c++')
+        addoptlang('Golang')
+        addLanguage('C-lang')
+        //create
+        function addLanguage(languageName)
+        {
+            const list=document.createElement('li')
+            list.innerText=languageName
+            const language=document.querySelector('.languages')
+            language.appendChild(list)
+        }
+        function addoptlang(languageName)
+        {
+            const list=document.createElement('li')
+            list.appendChild(document.createTextNode(languageName))
+            document.querySelector('.languages').appendChild(list)
+        }
+        //edit
+        const firstli=document.querySelector('li:nth-child(1)')
+        //console.log(firstli);
+        //firstli.innerHTML='typescript'
+        const newli=document.createElement('li')
+        newli.textContent='typescript'
+        firstli.replaceWith(newli)
+        
+        //remove
+        const lastli=document.querySelector('li:last-child')
+        //console.log(lastli);
+        lastli.remove()//c lang has been removed
+    </script>
+</body>
+</html>
