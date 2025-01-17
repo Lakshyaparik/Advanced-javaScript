@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async await</title>
+</head>
+<body>
+    <h1>HEllo there!</h1>
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+
+<script>
+    let intervalId;
+    let hex='0123456789ABCDEF'
+    let hexValues=function(){
+    let color='#'
+    for(let i=0;i<6;i++)
+    {
+        color+=hex[Math.floor(Math.random()*16)]
+    }
+    return color
+}
+function callinter()
+{
+    intervalId=setInterval(changebg,1000)
+}
+const changebg=()=>{
+    document.body.style.backgroundColor=hexValues()
+}
+
+document.getElementById('startButton').addEventListener('click',()=>{
+        console.log("start has clicked");
+        if(!intervalId)
+        {
+         callinter()
+        }
+})
+document.getElementById('stopButton').addEventListener('click',()=>{
+    console.log("stop execute");
+    clearInterval(intervalId)
+    intervalId=null
+    
+})
+    </script>
+</body>
+</html>
