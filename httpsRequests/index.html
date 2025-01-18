@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTPS Request</title>
+</head>
+<body>
+    <h1>This is for HTTPS request</h1>
+    <div class="demo">
+        <button class="button" id="fetchData">Click here</button>
+        <div class="data"></div>
+    </div>
+    <script>
+        document.getElementById("fetchData").addEventListener("click", () => {
+            const xmlhttps = new XMLHttpRequest();
+            xmlhttps.open("GET", "https://randomuser.me/api");
+
+            xmlhttps.onreadystatechange = () => {
+                console.log("Current readyState:", xmlhttps.readyState);
+
+                if (xmlhttps.readyState === 4) { // Request is DONE
+                    if (xmlhttps.status === 200) { // Success
+                        const data=JSON.parse(xmlhttps.response)
+                        const user=data.results[0].gender
+                    
+                        console.log(user);
+                        
+                    } else {
+                        console.error("Error:", xmlhttps.statusText);
+                    }
+                }
+            };
+
+            // Send the request
+            xmlhttps.send();
+        });
+    </script>
+</body>
+</html>
