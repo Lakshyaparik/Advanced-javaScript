@@ -1,3 +1,4 @@
+const key = "e9711c38";
 let songs;
 let songsListLibrary;
 let issongListLibraryVisible = false;
@@ -212,7 +213,7 @@ async function displayAlbums() {
     let folders = Array.from(links)
       .map(link => link.href.split('songs/')[1])  // Extract folder names
       .filter(folder => folder); // Remove empty values
-      
+
     let cardsHTML = "";
 
     // Fetch and generate album cards in parallel
@@ -240,73 +241,79 @@ async function displayAlbums() {
   } catch (error) {
     console.error("Error fetching albums:", error);
   }
-  document.querySelectorAll('.card').forEach((e)=>{
-    
-    e.addEventListener('click',()=>{
-      currentFolder=e.dataset.foldername;
+  document.querySelectorAll('.card').forEach((e) => {
+
+    e.addEventListener('click', () => {
+      currentFolder = e.dataset.foldername;
       showSongLibButton.click()
     })
   })
-  
+
 }
-  
+
 window.onload = () => {
   displayAlbums();
 };
 
 //event for search bar inputs
-document.querySelector('.search-input').addEventListener('keydown',(e)=>{
-  if(e.key==='Enter')
-  {
-    const input=e.target.value;
+document.querySelector('.search-input').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    const input = e.target.value;
     matchInput(input)
-    async function matchInput()
-    {
-      const response=await fetch('http://127.0.0.1:5500/spotifyClone/songs/')
-      const data=await response.text()
-      let div=document.createElement('div')
-      div.innerHTML=data
-      let as=div.getElementsByTagName('a')
-      let folders=Array.from(as)
-      .map(e=>e.href.split('songs/')[1])
-      .filter(e=>e)
-      let result=folders.filter(e=>e.toLowerCase().includes(input.toLowerCase()))
-      console.log('result after pressed downkey: ',result);
-      
-      cards=document.querySelector('.cards')
-      Array.from(cards.children)
-      .map((card)=>{
-        result.forEach((item)=>{
-          if(card.dataset.foldername.includes(item))
-          {
-            console.log('selected foldername: ',card.dataset.foldername);
-            searchAlbumDisplay(card.dataset.foldername)
-          }
-        })
-      })
+    async function matchInput() {
+      const response = await fetch('http://127.0.0.1:5500/spotifyClone/songs/')
+      const data = await response.text()
+      let div = document.createElement('div')
+      div.innerHTML = data
+      let as = div.getElementsByTagName('a')
+      let folders = Array.from(as)
+        .map(e => e.href.split('songs/')[1])
+        .filter(e => e)
+      let result = folders.filter(e => e.toLowerCase().includes(input.toLowerCase()))
+      searchAlbumDisplay(result)
     }
   }
+
 })
 
 //fun for selected albums show up
-async function searchAlbumDisplay(folder)
-{
-  console.log('folder passing from upper: ',folder);
-  
- let folders=[];
- folders.push(folder)
- cards=document.querySelector('.cards')
- cards.innerHTML=''
- await Promise.all(folders.map(async(folder)=>{
-  let response=await fetch(`http://127.0.0.1:5500/spotifyClone/songs/${folder}/info.json`)
-  let info=await response.json()
-  cards.innerHTML+=
-  `<div class="card" id="card" data-foldername="${folder}">
-            <img src="nav_assets/playButtonSvg.svg" class="playButton" alt="">
-            <img src="http://127.0.0.1:5500/spotifyClone/songs/${folder}/cover.jpeg" alt="">
-            <h4>${info.Artist_Name}</h4>
-            <span>${info.Category}</span>
-          </div>`
-          
- }))
+async function searchAlbumDisplay(foldersName) {
+  const folders = foldersName
+  cards = document.querySelector('.cards')
+  cards.innerHTML = ''
+  for (const folder of folders) {
+    try {
+      let response = await fetch(`http://127.0.0.1:5500/spotifyClone/songs/${folder}/info.json`)
+      let info = await response.json()
+      cards.innerHTML +=
+        `<div class="card" id="card" data-foldername="${folder}">
+                 <img src="nav_assets/playButtonSvg.svg" class="playButton" alt="">
+                 <img src="http://127.0.0.1:5500/spotifyClone/songs/${folder}/cover.jpeg" alt="">
+                 <h4>${info.Artist_Name}</h4>
+                 <span>${info.Category}</span>
+               </div>`
+    } catch (error) {
+      console.log("Error occured: ",error);
+    }
+  }
+
+  document.querySelectorAll('.card').forEach((e) => {
+
+    e.addEventListener('click', () => {
+      currentFolder = e.dataset.foldername;
+      showSongLibButton.click()
+    })
+  })
 }
+
+async function getAlbums() {
+  const response = await fetch(`https://api.jamendo.com/v3.0/albums/?client_id=${key}&format=jsonpretty&limit=10`);
+    try {
+        const data = await response.json()
+        console.log(div);
+    } catch (error) {
+        console.log("error: ", error);
+        throw error; // Throwing error instead of reject
+    }
+}
+getAlbums()
