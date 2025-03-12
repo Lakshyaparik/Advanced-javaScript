@@ -1,0 +1,27 @@
+.container{
+    width: 400px;
+    height: 400px;
+    background-color: burlywood;
+    margin: 50px auto;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: scale(1,1,1); */
+    /* transform: skew(10deg,30deg);
+    transform: scaleZ(5);
+   transform: rotateY(18deg);
+   transform: rotateZ(85deg);
+   border: 2px solid black;
+   transform: skew(30deg,30deg); */
+   transition: 0.2s ease;
+   /* transform-origin: 200px 100px; */
+   transform-origin: 100% 100%;
+}
+.box:hover{
+    transform: rotate(45deg);
+}

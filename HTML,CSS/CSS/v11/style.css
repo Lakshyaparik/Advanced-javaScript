@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&family=Jolly+Lodger&family=Silkscreen:wght@400;700&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    font-family: "BenchNine", system-ui,"Jolly Lodger","Silkscreen";
+    font-size: 30px;
+    font-weight: 700;
+}
+.outer-box{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top left,rgb(5, 242, 242),rgb(143, 211, 226));
+}
+.inner-box{
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+    padding: 10px 40px 10px;
+    border: 2px solid black;
+    /* background-color: #ffffff09; */
+    background: linear-gradient(to top left,rgba(88, 205, 213, 0.657),rgb(254, 255, 255));
+    border-radius: 10px;
+    box-shadow: 4px 2px 20px rgb(11, 60, 75);
+    z-index: 1;
+    backdrop-filter: blur(9px);
+}
+.signup-header{
+    text-align: center;
+    font-size: 2rem;
+}
+.signup-header h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 550;
+    font-size: 3rem;
+    padding-top: 0;
+    text-decoration: overline;
+    text-shadow: 1px 1px 4px skyblue;
+}
+.signup-header p{
+    font-size: 1rem;
+    color: rgb(99, 97, 97);
+    text-decoration-line: underline;
+    padding-top: 5px;
+}
+.signup-body p{
+    margin-top: 2px;
+    font-size: 1.6rem;
+}
+.signup-body p label{
+    display: block;
+}
+.signup-body p input{
+    width: 100%;
+    padding: 13px;
+    border: 2px solid black;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+.signup-body input[type="submit"]{
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.signup-body input[type="submit"]:hover{
+    background-color: #236896;
+}
+.signup-footer p{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.signup-footer p a{
+    color: #20618c;
+}
+.circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background: linear-gradient(to top right,rgba(170, 168, 168, 0.13),rgb(255, 255, 255));
+}
+.c1{
+  position: absolute;
+  top: 110px;
+  left: 400px;
+}
+.c2{
+    position: absolute;
+    top: 550px;
+    right: 300px;
+}

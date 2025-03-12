@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS SELECTERs</title>
+    <style>
+        /* element selecter */
+        h1{
+            color: white;
+            background-color: gray;
+        }
+        p{
+            color: pink;
+            background-color: yellow;
+        }
+        /* div selecter */
+        div{  
+            color: aqua;
+        }
+        /* element selecter */
+        div>p{
+            color: red;
+        }
+        /* id selecter in css */
+        #iddiv{
+            color: green;
+            background-color: yellow;
+        }
+        /* class selecter in css */
+        .class-div{
+            color: purple;
+            background: green;
+        }
+        div p{
+            color: coral;
+            background-color: black;
+        }
+        /* universal selecter */
+        * {
+            font-style: oblique;
+        }
+        /* group selecter in css */
+        #group,h3,span{
+            color: blue;
+        }
+        /* atribute slecter */
+        [href]{
+            color: grey;
+            background-color:yellow;
+        }
+        [href]:hover{
+            background-color: green;
+        }
+        a:visited{
+            color: red;
+        }
+        .seudo-class{
+            color: black;
+            font: 400;
+            font-style: unset;
+            font-weight: 900;
+        }
+        .seudo-class:hover{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <p>hello</p>
+    <div>
+        <h1>hello this is heading</h1>
+        hello this is div
+    </div>
+    <div>
+        <p>this is paragraph in div</p>
+    </div>
+    <div id="iddiv">
+        hello this is id div
+    </div>
+    <div class="class-div">
+        hello this is class in div
+    </div>
+    <div>
+        <span>
+            <p>
+                hello this is p in span in div
+            </p>
+        </span>
+    </div>
+    <div id="group">
+        <h2>hello this is heading 2</h2>
+    </div>
+    <div>
+        <h3>hello this is heading 3</h3>
+    </div>
+    <span>hello i am span</span>
+    <a href="https://google.com">google</a>
+    <a href="https://youtube.com">youtube</a>
+    <p class="seudo-class">this is psuedo class p</p>
+</body>
+</html>

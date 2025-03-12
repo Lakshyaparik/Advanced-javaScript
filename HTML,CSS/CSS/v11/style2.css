@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&family=Jolly+Lodger&family=Silkscreen:wght@400;700&display=swap');
+*{ 
+    box-sizing: border-box;
+    background-color: rgb(36, 35, 35);
+    font-family:  "Silkscreen";
+    font-weight: 400;
+}
+.outerbox{
+   width: 100vw;
+   height: 100vh;
+   
+}
+.innerbox{
+    text-align: center;
+    border: 1px dotted rgba(255, 255, 255, 0.806);
+    position: relative;
+    top: 15%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    height: 600px;
+    width: 500px;
+    font-size: 1.1rem;
+    box-shadow: 1px 1px 30px black;
+}
+.signupheader>h1{
+    color: white;
+}
+.signupsection p{
+    color: rgb(192, 184, 184);
+    text-align: left;
+    margin: 30px 50px;
+    padding: p2x 0;
+}
+.signupsection input{
+    display: block;
+    padding: 10px;
+    width: 100%;
+}
+.signupsection p>input[type="password"]{
+    color: white;
+}
+.signupsection p>input[type="current-password"]{
+    color: white;
+}
+.signupsection p>input[type="submit"]{
+    color: white;
+    background-color: rgb(57, 56, 56);
+}
+.signupfooter p{
+    text-transform: capitalize;
+    color: white;
+    display: inline;
+    text-align: center;
+}
+.signupfooter a{
+    color: gray;
+    background-color: white;
+}
+

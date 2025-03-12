@@ -1,0 +1,27 @@
+*{
+    background-color: black;
+    color: white;
+}
+.container{
+    border: 2px solid yellow;
+    display: grid;
+    height: 100vh;
+    /* grid-template-columns: repeat(3,100px); */
+}
+.box{
+    border: 1px solid white;
+}
+#box1{
+    /* justify-self: center;
+    align-self: center;
+    grid-column: 1 /span 3; */
+    /* grid-column: 2; */
+    grid-area: span 2/span 3;
+}
+#box2{
+    grid-row: span 4;
+    grid-column: span 1;
+}
+#box11{
+   grid-area: span 2/span 3;
+}

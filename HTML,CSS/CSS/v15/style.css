@@ -1,0 +1,16 @@
+body{
+    background-color: gray;
+}
+@media(max-width:800px)
+{
+    body{
+        background-color: yellow;
+    }
+}
+
+@media(width<=400px)
+{
+    body{
+        background-color: red;
+    }
+}

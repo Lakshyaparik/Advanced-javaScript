@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>combinator selector---child selectors</title>
+    <style>
+        div>p{
+            color: gray;
+            background-color: black;
+            font-family: Geneva, Verdana, sans-serif;
+        }
+        div.span{
+            text-align: center;
+        }
+        div.span>span{
+            text-decoration-line: underline;
+            background-color: goldenrod;
+            text-transform: uppercase;
+            text-shadow: 4px 2px 10px red;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">this is heading</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, reiciendis?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem earum vel voluptate officiis! Mollitia atque, facilis maxime molestiae quam ducimus obcaecati, aspernatur non ipsa debitis, eos modi deleniti! Voluptate, odio.</p>
+        <section>
+            <p>this is p inside section inside div</p>
+        </section>
+        <p>this is p tag</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ea ipsum.</p>
+
+    <div class="span">
+        <span><span>this is span in span</span></span>
+    </div>
+</body>
+</html>

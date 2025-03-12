@@ -1,0 +1,21 @@
+.container{
+    border: solid wheat;
+    display: flex;
+    justify-content: space-between;
+    width:900px;
+    padding: 10px;
+    background-color: gray;
+}
+.box{
+    border: 1px solid white;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.round-border{
+    border-radius: 50%;
+    border: 10px solid white;
+}

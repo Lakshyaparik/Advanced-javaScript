@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinator selectors:-----desecendent sebling selectors</title>
+    <!-- descendant:-a element after a specific element -->
+</head>
+<style>
+    div+p{
+        color: white;
+        border: black;
+        background-color: pink;
+    }
+</style>
+<body>
+    <p>this is 1 para</p>
+    <div>
+        <p>this i 2nd para</p>
+        <span><p>this is 3rd para</p></span>
+    </div>
+    <p>this is 4 th para</p>
+    <div>
+        <span>this is span</span>
+    </div>
+    <p>this is 5th para</p>
+</body>
+</html>

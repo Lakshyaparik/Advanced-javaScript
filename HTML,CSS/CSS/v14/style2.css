@@ -1,0 +1,33 @@
+*{
+    background-color: black;
+    color: white;
+}
+.container{
+    border: 2px solid yellow;
+    display: grid;
+    height: 100vh;
+    grid-template-areas:"hdr hdr hdr hdr"
+                        "side main main main"
+                        "side main main main"
+                        "side main main main"
+                        "ftr ftr ftr ftr";
+}
+.box{
+    border: 1px solid white;
+}
+#box1{
+    grid-area: hdr;
+    background-color: pink;
+}
+#box2{
+    grid-area: side;
+    background-color: yellow;
+}
+#box3{
+    grid-area: main;
+    background-color: white;
+}
+#box4{
+    grid-area: ftr;
+    background-color: gray;
+}

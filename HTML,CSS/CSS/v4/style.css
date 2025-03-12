@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+h1{
+    font-family: "Jolly Lodger", system-ui;
+}
+body{
+    font-size: 100%;
+}
+p{
+    font-family: "Silkscreen", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-variant: small-caps;
+    font-size: 2vw;
+}
+span{
+    font : italic normal bold 2rem/10px serif;
+}

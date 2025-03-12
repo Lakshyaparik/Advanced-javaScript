@@ -1,0 +1,30 @@
+p {
+  text-indent: 50%;
+  text-decoration-line: underline;
+  text-decoration-color: red;  
+  text-decoration-style: double;
+  text-decoration-thickness: 1px;
+
+}
+p.linespace{
+  text-indent: 0%;
+  letter-spacing: 2px;
+  line-height: 2;
+}
+h1{
+    color: rgb(214, 214, 38);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+p.whitespace{
+  text-indent: 0%;
+}
+a{
+  word-spacing: 10px;
+  text-decoration: none;
+}
+span{
+  font-size: 2em;
+  color: transparent;
+  text-shadow: 2px 2px 3px black;
+}
