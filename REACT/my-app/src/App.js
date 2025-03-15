@@ -1,10 +1,12 @@
 
 
 function App() {
+  const password='password'
   return (
     <>
-    <h1>hello this is my first react work</h1>
-    <h2>hello this is h2</h2>
+    <ul>
+      <li>this is list {password}</li>
+    </ul>
     </>
   );
 }
