@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage
+    </title>
+</head>
+<body>
+    <!-- // local storage is a way to store data in the browser
+    // it is a key value pair
+    // it is stored as a string
+    // it is stored in the browser -->
+    <!-- its store data parmanently in the browser even tab is closed -->
+    <h1>local storage demo for save</h1>
+    <input type="text" id="username" placeholder="username">
+    <input type="text" id="password" placeholder="password">
+    <button id="login">login</button>
+    <button id="logout">logout</button>
+    <script>
+        document.getElementById('login').addEventListener('click',()=>{
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            localStorage.setItem('username',username);
+            localStorage.setItem('password',password);
+        })
+        document.getElementById('logout').addEventListener('click',()=>{
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+        })
+    </script>
+</body>
+</html>
