@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>session storage</title>
+</head>
+<body>
+    <label for="username">username</label>
+    <input type="text" id="username">
+    <br>
+    <br>
+    <label for="password">password</label>
+    <input type="text" id="password">
+    <br>
+    <br>
+    <label for="country">country</label>
+    <input type="text" id="country">
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+    <script>
+        const username=document.getElementById('username');
+        const password=document.getElementById('password');
+        const country=document.getElementById('country');
+        const submit=document.querySelector('button');
+
+        submit.addEventListener('click',()=>{
+            sessionStorage.setItem('username',username.value);
+            sessionStorage.setItem('password',password.value);
+            sessionStorage.setItem('country',country.value);
+        })
+        
+        username.addEventListener('focus',()=>{
+            username.value=sessionStorage.getItem('username');
+        })
+        password.addEventListener('focus',()=>{
+            password.value=sessionStorage.getItem('password');
+        })
+        country.addEventListener('focus',()=>{
+            country.value=sessionStorage.getItem('country');
+        })
+
+    </script>
+</body>
+</html>
