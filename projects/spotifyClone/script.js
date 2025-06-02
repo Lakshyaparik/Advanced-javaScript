@@ -147,7 +147,7 @@ async function getSongs(folder) {
   let songs = [];
   currentFolder = folder
   const response = await fetch(
-    `http://127.0.0.1:5500/spotifyClone/songs/${folder}`
+    `https://bookish-goldfish-g456gqjj4r5j3p7gq-5501.app.github.dev/projects/spotifyClone/songs/${folder}`
   );
   const data = await response.text()
     .then((data) => {
@@ -201,7 +201,7 @@ volumeBar.addEventListener("input", function () {
 async function displayAlbums() {
   try {
     // Fetch the directory listing
-    const response = await fetch("http://127.0.0.1:5500/spotifyClone/songs/");
+    const response = await fetch("https://bookish-goldfish-g456gqjj4r5j3p7gq-5501.app.github.dev/projects/spotifyClone/songs/");
     const data = await response.text();
 
     // Parse the response to extract folder names
@@ -218,19 +218,21 @@ async function displayAlbums() {
     // Fetch and generate album cards in parallel
     await Promise.all(folders.map(async (folder) => {
       try {
-        let infoResponse = await fetch(`http://127.0.0.1:5500/spotifyClone/songs/${folder}/info.json`);
+        let infoResponse = await fetch(`https://bookish-goldfish-g456gqjj4r5j3p7gq-5501.app.github.dev/projects/spotifyClone/songs//${folder}/info.json`);
         let info = await infoResponse.json();
 
         cardsHTML += `
           <div class="card" id="card" data-foldername="${folder}">
             <img src="nav_assets/playButtonSvg.svg" class="playButton" alt="">
-            <img src="http://127.0.0.1:5500/spotifyClone/songs/${folder}/cover.jpeg" alt="">
+            <img src="https://bookish-goldfish-g456gqjj4r5j3p7gq-5501.app.github.dev/projects/spotifyClone/songs/${folder}/cover.jpeg" alt="">
             <h4>${info.Artist_Name}</h4>
             <span>${info.Category}</span>
           </div>
         `;
       } catch (error) {
         console.error(`Error fetching info.json for ${folder}:`, error);
+        console.log(error);
+        
       }
     }));
 
