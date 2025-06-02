@@ -310,7 +310,7 @@ async function getAlbums() {
   const response = await fetch(`https://api.jamendo.com/v3.0/albums/?client_id=${key}&format=jsonpretty&limit=10`);
     try {
         const data = await response.json()
-        console.log(div);
+        console.log(data);
     } catch (error) {
         console.log("error: ", error);
         throw error; // Throwing error instead of reject
